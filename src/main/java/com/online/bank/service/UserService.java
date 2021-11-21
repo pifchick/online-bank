@@ -5,7 +5,6 @@ import com.online.bank.exception.UserAlreadyExistException;
 import com.online.bank.exception.UserNotFoundException;
 import com.online.bank.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,5 +26,9 @@ public class UserService {
             throw new UserNotFoundException("Пользователь не был найден");
         }
         return user;
+    }
+    public Long delete(Long id) {
+        userRepo.deleteById(id);
+        return id;
     }
 }

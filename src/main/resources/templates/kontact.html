@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title th:text="${title}"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
+  <style>
+    .primer1{
+      color: rgba(252, 252, 252, 0.68);
+    }
+  </style>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<style> body {background: url(static/img/9.jpg);} </style>
+<div class="primer1 px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold"><ya-tr-span data-index="1-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Centered hero"  data-type="trSpan" data-selected="false">Pifchi Company</ya-tr-span></h1>
+  <div class="col-lg-6 mx-auto">
+    <h3><p class="lead mb-4 fw-bold" >epifanov.anton2015@mail.ru - если горячая линия загружена, пишите на почту<br>
+    8(916)-972-89-** - телефон горячей линии<br>Социальная сеть вконтакте:
+    <a href="https://vk.com/pifchick">Епифанов Антон-general director</a></p></h3>
+  </div>
+</div>
+
+<!--<footer th:insert="blocks/footer :: footer"></footer>-->
+</body>
+</html>

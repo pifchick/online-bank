@@ -1,0 +1,22 @@
+<div th:fragment="header" style="height: 19%" class="p-3  bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+     <a href="/" class="navbar-brand" style="margin-left:-10%; margin-block-end: 2%" >
+       <img  height="50" th:src="@{/static/img/1.png}"/>
+    </a> <!--<link th:href="@{/styles/cssandjs/main.css}"-->
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/" class="nav-link px-2 text-secondary">Главная</a></li>
+        <li><a href="/we" class="nav-link px-2 text-white">Почему стоит выбрать нас</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Часто задаваемые вопросы</a></li>
+        <li><a href="/kontact" class="nav-link px-2 text-white">Контакты</a></li>
+      </ul>
+
+
+      <div class="text-end">
+        <a href="/sing-in"><button type="button" class="btn btn-outline-light me-2">Войти</button></a>
+        <a href="/registration"> <button type="button" class="btn btn-warning">Регистрация</button></a>
+      </div>
+    </div>
+  </div>
+</div>
