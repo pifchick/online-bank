@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${title}"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"/>
+  <!--<link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" />-->
+
+<style>
+  .body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .b-search-item{
+    display: table-cell;
+    vertical-align: top;
+    width: calc(100% - 15.2%);
+  }
+</style>
+
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="row g-5 b-search-item body">
+  <div class="col-md-7 col-lg-8">
+    <h4 class="mb-3">Заказать карту</h4>
+    <form class="needs-validation" novalidate="">
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="firstName" class="form-label">Имя</label>
+          <input type="text" class="form-control" id="firstName" placeholder="Антон" value="" required="">
+          <div class="invalid-feedback">
+            Valid first name is required.
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="lastName" class="form-label">Фамилия</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Епифанов" value="" required="">
+          <div class="invalid-feedback">
+            Valid last name is required.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="email" class="form-label">Email <span class="text-muted">(Дополнительно)</span></label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="address" class="form-label">Адрес</label>
+          <input type="text" class="form-control" id="address" placeholder="111386, Moscow" required="">
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <label for="country" class="form-label">Страна</label>
+          <select class="form-select" id="country" required="">
+            <option value="">Другая...</option>
+            <option>США</option>
+            <option>Россия</option>
+            <option>Китай</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid country.
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="same-address">
+        <label class="form-check-label" for="same-address">Адрес доставки совпадает с адресом проживания</label>
+      </div>
+
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="save-info">
+        <label class="form-check-label" for="save-info">Сохраните эту информацию для следующего раза</label>
+      </div>
+
+      <hr class="my-4">
+
+      <h4 class="mb-3">Какую карту вы хотите?</h4>
+
+      <div class="my-3">
+        <div class="form-check">
+          <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+          <label class="form-check-label" for="credit">Credit card</label>
+        </div>
+        <div class="form-check">
+          <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+          <label class="form-check-label" for="debit">Debit card</label>
+        </div>
+        <div class="form-check">
+          <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+          <label class="form-check-label" for="paypal">PayPal</label>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      <button class="w-100 btn btn-primary btn-lg" type="submit">Заказать карту</button>
+    </form>
+  </div>
+</div><br>
+<footer th:insert="blocks/footer :: footer"></footer>
+</body>
+</html>
